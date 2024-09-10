@@ -1,6 +1,7 @@
 import { orders } from '../data/orders.js';
 import { products, loadProducts, getProduct } from '../data/products.js';
 import { addSearchEvents } from '../data/search.js';
+import { cartQuantity } from '../data/cart.js';
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 
 async function loadPage() {
@@ -101,6 +102,7 @@ function loadTracking() {
   });
 
   document.querySelector('.js-order-tracking').innerHTML = trackingHTML;
+  document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
   
   if (trackingHTML != '<div>Tracking information not found.</div>') {
     setTimeout(() => {
